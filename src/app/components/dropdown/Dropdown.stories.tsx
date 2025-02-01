@@ -71,3 +71,10 @@ export const Vertical: Story = {
     layout: 'vertical',
   },
 };
+export const Outlined: Story = {
+  args: {
+    label: 'Label',
+    options: optionsList,
+    outlined: true,
+  },
+};

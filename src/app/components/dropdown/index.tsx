@@ -23,6 +23,7 @@ interface DropdownProps {
   ) => void;
   useFilter?: boolean;
   layout?: 'horizontal' | 'vertical';
+  outlined?: boolean;
 }
 
 /**
@@ -40,6 +41,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   label,
   layout = 'horizontal',
   onChange,
+  outlined = false,
 }) => {
   const [searchValue, setSearchValue] = useState('');
   const [selectedOptions, setSelectedOptions] = useState<
@@ -177,7 +179,8 @@ export const Dropdown: React.FC<DropdownProps> = ({
       <div className="relative flex-1 w-full" ref={dropdownRef}>
         <Card
           onClick={toggleDropdown}
-          className="cursor-pointer flex justify-between items-center"
+          className="cursor-pointer flex justify-between items-center min-w-52"
+          isOutlined={outlined}
         >
           <CardContent>
             {multiple ? (
@@ -209,13 +212,13 @@ export const Dropdown: React.FC<DropdownProps> = ({
                         </button>
                       </div>
                     ))
-                  : 'Select options'}
+                  : ''}
               </div>
             ) : selectedOptions ? (
               options.find((opt) => opt.value === selectedOptions)
                 ?.label
             ) : (
-              'Select an option'
+              ''
             )}
           </CardContent>
           <img
