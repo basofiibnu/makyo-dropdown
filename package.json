@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://basofiibnu.github.io/makyo-dropdown",
-  "main": "src/app/components/dropdown/index.tsx",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
