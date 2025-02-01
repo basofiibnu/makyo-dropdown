@@ -2,13 +2,15 @@
   "name": "dropdown",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://basofiibnu.github.io/makyo-dropdown",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build -o storybook-static",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.3.1",
