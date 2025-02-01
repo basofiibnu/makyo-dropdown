@@ -12,6 +12,7 @@ interface DropdownOption {
 }
 
 interface DropdownProps {
+  id?: string;
   options: DropdownOption[];
   searchable?: boolean;
   usePortal?: boolean;
@@ -32,6 +33,7 @@ interface DropdownProps {
  * It also provides an option to use a portal for rendering the dropdown menu.
  */
 export const Dropdown: React.FC<DropdownProps> = ({
+  id = 'dropdown-id-82985',
   options,
   searchable = true,
   usePortal = false,
@@ -170,6 +172,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
           ? 'flex-col gap-3 items-start justify-center'
           : 'flex-row gap-16 items-center justify-between'
       }`}
+      id={id}
     >
       {label && (
         <label className="block mb-1 text-sm text-gray-700">

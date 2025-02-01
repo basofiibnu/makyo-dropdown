@@ -19,6 +19,7 @@ To use the Dropdown component in your project, follow these steps:
 
 ### Props
 
+- `id` (string): A unique id for dropdown.
 - `options` (array): An array of options to display in the dropdown.
 - `searchable` (boolean): If true, enables a search input to filter options. Default is `true`.
 - `usePortal` (boolean): If true, renders the dropdown menu in a portal. Default is `false`.
