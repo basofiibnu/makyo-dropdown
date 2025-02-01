@@ -25,6 +25,21 @@ interface DropdownProps {
   layout?: 'horizontal' | 'vertical';
 }
 
+/**
+ * A dropdown component that allows users to select one or multiple options from a list.
+ * The component supports searching, filtering, and rendering of options.
+ * It also provides an option to use a portal for rendering the dropdown menu.
+ *
+ * @param {DropdownOption[]} options - The list of options to display in the dropdown.
+ * @param {boolean} [searchable=true] - Whether to display a search input to filter options.
+ * @param {boolean} [usePortal=false] - Whether to render the dropdown menu in a portal.
+ * @param {boolean} [multiple=false] - Whether to allow multiple selections.
+ * @param {number} [zIndex=1050] - The z-index of the dropdown menu.
+ * @param {string} [label] - The label to display above the dropdown.
+ * @param {'horizontal'|'vertical'} [layout='horizontal'] - The layout of the dropdown.
+ * @param {(selected: string|number|(string|number)[]) => void} [onChange] - A callback function to call when the selected options change.
+ * @param {boolean} [useFilter=true] - Whether to filter options based on the search input.
+ */
 export const Dropdown: React.FC<DropdownProps> = ({
   options,
   searchable = true,
@@ -198,6 +213,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
                         >
                           <img
                             src="/close.svg"
+                            alt="close"
                             className="w-4 hover:opacity-70 transition-opacity ease-in-out duration-200"
                           />
                         </button>
@@ -214,6 +230,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
           </CardContent>
           <img
             src="/chevrondown.svg"
+            alt="chevron-down"
             className={`w-4 ${isOpen ? 'rotate-180' : ''}`}
           />
         </Card>
